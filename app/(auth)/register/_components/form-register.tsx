@@ -14,7 +14,10 @@ const FormRegister = () => {
             <div>
                 <h1 className="text-xl font-bold mb-5">Sign Up</h1>
                 <hr />
-                <div>
+                <div className='my-3 w-full'>
+                    {state?.message ?(
+                        <span className='bg-red-100 py-2 rounded-md w-full'>{state.message}</span>
+                    ):null}
                 </div>
             </div>
             <form action={formAction} className="text-left">
@@ -42,7 +45,7 @@ const FormRegister = () => {
                     <Button type="submit" className="w-full bg-red-500">Register</Button>
                 </div>
                 <div className="text-center text-sm">
-                    <span>Already registered? <Link href={'/sign-in'} className="underline">Sign in here</Link></span>
+                    <span>Already registered? <Link href={'/login'} className="underline">Sign in here</Link></span>
                 </div>
             </form>
             <div className="my-3 flex items-center gap-5">
